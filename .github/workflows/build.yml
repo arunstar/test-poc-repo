@@ -30,6 +30,7 @@ jobs:
           echo "repo_name=${{ github.event.comment.body }}" >> $GITHUB_OUTPUT
           comment_hash=`echo ${{ github.event.comment.body }} | cut -d' ' -f2` # get commit hash if any
           if [[ "${comment_hash}" == "/runsim" ]]; then 
+            echo "yeah Mr.White"
           else
             # use comment provided ref
             echo "ref=${comment_hash}" >> $GITHUB_OUTPUT
