@@ -22,15 +22,6 @@ jobs:
       repo_name: ${{ steps.pr_data.outputs.repo_name }}
       ref: ${{ steps.pr_data.outputs.ref }}
     steps:
-      - name: Comment PR for Sim test started
-        uses: crypto-org-chain/actions-pull-request-add-comment@master
-        if: github.event_name == 'issue_comment'
-        with:
-          message: |
-            Simulation tests started and triggered by `/runsim`. 
-            Will update here when it succeeds or fails.
-            Can further check progress [here](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get Comment PR informations
         id: pr_data
         if: github.event_name == 'issue_comment'
