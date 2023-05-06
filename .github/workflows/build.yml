@@ -24,7 +24,9 @@ jobs:
     steps:
       - name: Get Comment PR informations
         id: pr_data
-        if: github.event_name == 'issue_comment'
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOP_SECRET }}
         run: |
-          echo "${{ github.event.comment.body }}"
-          echo "OKKKKKKK="
+          echo "OKKKKKKK=======START============"
+          echo "$GITHUB_TOKEN"
+          echo "=============xxxDonexxx========="
