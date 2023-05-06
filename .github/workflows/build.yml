@@ -27,4 +27,4 @@ jobs:
         if: github.event_name == 'issue_comment'
         run: |
           echo "${{ github.event.comment.body }}"
-          echo "OKKKKKK"
+          echo "OKKKKKKK"
